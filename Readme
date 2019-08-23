@@ -38,5 +38,5 @@ Matlab 2017a
 
   1. You can directly run './tracking/demo.m' as a demo to test our algrithom with the pre-trained model ('./models/triplet.net.mat'). You can also try your trained model by modifying ./tracking/run_tracker.m and env_paths_tracking.m.
 
-Note: some codes are borrow from SiamFC:'Fully-Convolutional Siamese Networks for Object Tracking'. Thanks for all authors of SiamFC. 
+Note: some codes are borrow from "SiamFC". Thanks for all authors of SiamFC. 
 
