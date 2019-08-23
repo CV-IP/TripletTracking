@@ -1,0 +1,42 @@
+Implementation code for eccv 2018:
+[1] X. Dong and J. Shen
+Triplet loss in siamese network for object tracking, 
+ECCV, pp. 459-474, 2018
+========================================================================
+Any comments, please email: xingping.dong@gmail.com
+                            shenjianbing@bit.edu.cn
+
+This software was developed under Ubuntu 14.04 with matlab 2017a.
+
+If you use this software for academic research, please cite the following paper:
+
+@inproceedings{dong2018triplet,
+  title={Triplet loss in siamese network for object tracking},
+  author={Dong, Xingping and Shen, Jianbing},
+  booktitle={Proceedings of the European Conference on Computer Vision (ECCV)},
+  pages={459--474},
+  year={2018}
+}
+
+
+[**Prerequisites**]
+Cuda 7.5
+cuDNN v5.1
+Matconvnet v1.0-beta20
+Matlab 2017a
+
+
+[**Training**] After you finish all Prerequisites, you can train our network step by step.
+
+  1. Perpare dataset: (same instructions in SiamFC:'Fully-Convolutional Siamese Networks for Object Tracking' ) Follow these [step-by-step instructions] in ./ILSVRC15-curation/README.md
+  2. Setup the paths in ./training/env_paths_training.m and startup.m 
+  3. Run the script for training:
+	./training/run_experiment_tri.m 
+  4. After training, you can select the epoch with the lowest val errdisp according ./training/triplet_gray/net-train.pdf (net-epoch-1.mat in this test code). Then this model can be used for tracking in next step. 
+
+[**Tracking**]
+
+  1. You can directly run './tracking/demo.m' as a demo to test our algrithom with the pre-trained model ('./models/triplet.net.mat'). You can also try your trained model by modifying ./tracking/run_tracker.m and env_paths_tracking.m.
+
+Note: some codes are borrow from SiamFC:'Fully-Convolutional Siamese Networks for Object Tracking'. Thanks for all authors of SiamFC. 
+
